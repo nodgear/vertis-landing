@@ -1,3 +1,7 @@
+"use client";
+
+import { motion } from "motion/react";
+
 export default function BestResort() {
   const projects = [
     {
@@ -34,20 +38,44 @@ export default function BestResort() {
       <div className="mx-auto px-6 lg:px-25 max-w-480">
         {/*  Header  */}
         <div className="mb-16 text-center">
-          <h2 className="mb-6 font-display font-bold text-[#333] text-3xl md:text-4xl lg:text-5xl">
+          <motion.h2
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="mb-6 font-display font-bold text-[#333] text-3xl md:text-4xl lg:text-5xl"
+          >
             EMPREENDIMENTOS
-          </h2>
-          <div className="bg-[#8b7355] mx-auto mb-8 w-24 h-1"></div>
-          <p className="mx-auto max-w-2xl text-[#666] text-base md:text-lg">
+          </motion.h2>
+          <motion.div
+            initial={{ opacity: 0, scaleX: 0 }}
+            whileInView={{ opacity: 1, scaleX: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
+            className="bg-[#8b7355] mx-auto mb-8 w-24 h-1"
+          ></motion.div>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
+            className="mx-auto max-w-2xl text-[#666] text-base md:text-lg"
+          >
             Projetos em diferentes estágios e em modelos de negócio. Aqui você
             tem a visão geral e pode falar com o parceiro responsável pela
             gestão comercial.
-          </p>
+          </motion.p>
         </div>
 
         {/*  Features  */}
         <div className="flex md:flex-row flex-col justify-center gap-12 md:gap-24 mb-16">
-          <div className="flex items-center gap-3">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
+            className="flex items-center gap-3"
+          >
             <svg
               className="w-8 h-8 text-[#666]"
               fill="none"
@@ -65,8 +93,14 @@ export default function BestResort() {
                 estrutura financeira
               </p>
             </div>
-          </div>
-          <div className="flex items-center gap-3">
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.5, ease: "easeOut" }}
+            className="flex items-center gap-3"
+          >
             <svg
               className="w-8 h-8 text-[#666]"
               fill="none"
@@ -85,15 +119,31 @@ export default function BestResort() {
                 construtora de referência
               </p>
             </div>
-          </div>
+          </motion.div>
         </div>
 
-        <div className="bg-[#ddd] mb-16 w-full h-px"></div>
+        <motion.div
+          initial={{ opacity: 0, scaleX: 0 }}
+          whileInView={{ opacity: 1, scaleX: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.6 }}
+          className="bg-[#ddd] mb-16 w-full h-px"
+        ></motion.div>
 
         {/*  Project  1  -  Amalfi  Itaparica  */}
         <div className="flex lg:flex-row flex-col gap-10 mb-20">
-          <div className="w-full lg:w-1/2">
-            <div className="relative bg-[#8a8a8a] rounded-lg aspect-4/3 overflow-hidden">
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="w-full lg:w-1/2"
+          >
+            <motion.div
+              whileHover={{ boxShadow: "0 20px 50px rgba(0,0,0,0.15)" }}
+              transition={{ duration: 0.3 }}
+              className="relative bg-[#8a8a8a] rounded-lg aspect-4/3 overflow-hidden"
+            >
               <span className="top-4 left-4 absolute bg-[#4a4a4a] px-4 py-2 rounded text-white text-xs">
                 LANÇAMENTO EM BREVE
               </span>
@@ -102,9 +152,15 @@ export default function BestResort() {
                   Amalfi Itaparica
                 </h3>
               </div>
-            </div>
-          </div>
-          <div className="flex flex-col justify-center w-full lg:w-1/2">
+            </motion.div>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="flex flex-col justify-center w-full lg:w-1/2"
+          >
             <h4 className="mb-4 font-semibold text-[#333] text-xl md:text-2xl">
               Itaparica, BA
             </h4>
@@ -130,9 +186,11 @@ export default function BestResort() {
               </div>
             </div>
             <div className="bg-[#ddd] mb-6 w-full h-px"></div>
-            <a
+            <motion.a
               href="#"
-              className="inline-flex justify-between items-center bg-[#4a4a4a] hover:bg-[#333] px-6 py-4 rounded max-w-sm text-white transition-colors"
+              whileHover={{ backgroundColor: "#333" }}
+              transition={{ duration: 0.3 }}
+              className="inline-flex justify-between items-center bg-[#4a4a4a] px-6 py-4 rounded max-w-sm text-white"
             >
               <span className="text-sm tracking-wider">
                 CONHECER PROJETO & ESTRUTURA
@@ -150,13 +208,19 @@ export default function BestResort() {
                   d="M17  8l4  4m0  0l-4  4m4-4H3"
                 />
               </svg>
-            </a>
-          </div>
+            </motion.a>
+          </motion.div>
         </div>
 
         {/*  Project  2  -  Horto  Florestal  */}
         <div className="flex lg:flex-row flex-col-reverse gap-10">
-          <div className="flex flex-col justify-center w-full lg:w-1/2">
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="flex flex-col justify-center w-full lg:w-1/2"
+          >
             <h4 className="mb-4 font-semibold text-[#333] text-xl md:text-2xl">
               Salvador, BA
             </h4>
@@ -188,9 +252,11 @@ export default function BestResort() {
               </div>
             </div>
             <div className="bg-[#ddd] mb-6 w-full h-px"></div>
-            <a
+            <motion.a
               href="#"
-              className="inline-flex justify-between items-center bg-[#4a4a4a] hover:bg-[#333] px-6 py-4 rounded max-w-sm text-white transition-colors"
+              whileHover={{ backgroundColor: "#333" }}
+              transition={{ duration: 0.3 }}
+              className="inline-flex justify-between items-center bg-[#4a4a4a] px-6 py-4 rounded max-w-sm text-white"
             >
               <span className="text-sm tracking-wider">
                 CONHECER PROJETO & ESTRUTURA
@@ -208,10 +274,20 @@ export default function BestResort() {
                   d="M17  8l4  4m0  0l-4  4m4-4H3"
                 />
               </svg>
-            </a>
-          </div>
-          <div className="w-full lg:w-1/2">
-            <div className="relative bg-[#8a8a8a] rounded-lg aspect-4/3 overflow-hidden">
+            </motion.a>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="w-full lg:w-1/2"
+          >
+            <motion.div
+              whileHover={{ boxShadow: "0 20px 50px rgba(0,0,0,0.15)" }}
+              transition={{ duration: 0.3 }}
+              className="relative bg-[#8a8a8a] rounded-lg aspect-4/3 overflow-hidden"
+            >
               <span className="top-4 left-4 absolute bg-[#4a4a4a] px-4 py-2 rounded text-white text-xs">
                 EM DESENVOLVIMENTO
               </span>
@@ -220,8 +296,8 @@ export default function BestResort() {
                   Horto Florestal
                 </h3>
               </div>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         </div>
       </div>
     </section>

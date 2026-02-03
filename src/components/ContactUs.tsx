@@ -1,3 +1,7 @@
+"use client";
+
+import { motion } from "motion/react";
+
 export default function ContactUs() {
   return (
     <>
@@ -5,22 +9,39 @@ export default function ContactUs() {
         <div className="mx-auto px-6 lg:px-25 max-w-480">
           {/*  CTA  Section  */}
           <div className="text-center">
-            <h2 className="mb-6 text-3xl md:text-4xl lg:text-5xl">
+            <motion.h2
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+              className="mb-6 text-3xl md:text-4xl lg:text-5xl"
+            >
               VAMOS <span className="font-bold">CONVERSAR!</span>
-            </h2>
+            </motion.h2>
 
-            <p className="mx-auto mb-10 max-w-2xl text-base md:text-lg /70">
+            <motion.p
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+              className="mx-auto mb-10 max-w-2xl text-base md:text-lg /70"
+            >
               Se você quer entender melhor os empreendimentos, falar sobre
               oportunidades ou construir uma parceria com a Vertis, a porta está
               aberta!
-            </p>
+            </motion.p>
 
-            <a
+            <motion.a
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
+              whileHover={{ backgroundColor: "#333" }}
               href="mailto:contato@vertisincorporadora.com.br"
-              className="inline-block bg-button-gradient hover:bg-[#333] px-12 py-5 rounded-xl text-white text-lg tracking-widest transition-colors"
+              className="inline-block bg-button-gradient px-12 py-5 rounded-xl text-white text-lg tracking-widest"
             >
               ENTRE EM CONTATO
-            </a>
+            </motion.a>
           </div>
         </div>
       </section>

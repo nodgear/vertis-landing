@@ -1,31 +1,73 @@
+"use client";
+
+import { motion, useScroll, useTransform } from "motion/react";
+import { useRef } from "react";
+
 export default function AboutUs2() {
+  const sectionRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start end", "end start"],
+  });
+
+  // Parallax transforms - stronger movement range
+  const imageY = useTransform(scrollYProgress, [0, 1], [350, -350]);
+  
+  // Content moves at different speed for depth
+  const contentY = useTransform(scrollYProgress, [0, 1], [200, -200]);
+
   return (
-    <section id="sobre" className="py-20 md:py-28">
+    <section ref={sectionRef} id="sobre" className="relative py-20 md:py-28 overflow-hidden">
       <div className="mx-auto px-6 lg:px-25 max-w-480">
         <div className="flex md:flex-row flex-col items-center gap-12 md:gap-20">
           {/*  Image  Placeholder  */}
-          <div className="w-full md:w-1/2">
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            style={{ y: imageY }}
+            className="w-full md:w-1/2 will-change-transform"
+          >
             <div className="bg-[url(/aboutus_2_display.png)] bg-contain bg-no-repeat bg-center rounded-3xl w-full aspect-4/3"></div>
-          </div>
+          </motion.div>
 
           {/*  Content  */}
-          <div className="w-full md:w-1/2">
-            <div className="mb-14">
+          <motion.div style={{ y: contentY }} className="w-full md:w-1/2 will-change-transform">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+              className="mb-14"
+            >
               <p className="mb-4 text-white/70 text-sm uppercase tracking-widest">
                 VERTIS INCORPORADORA
               </p>
               <div className="bg-card-gradient w-1/4 h-0.5"></div>
-            </div>
+            </motion.div>
 
-            <h2 className="mb-14 font-display font-medium text-brown text-3xl md:text-4xl lg:text-5xl">
+            <motion.h2
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+              className="mb-14 font-display font-medium text-brown text-3xl md:text-4xl lg:text-5xl"
+            >
               O QUE NÓS
               <br />
               <span className="inline-block text-gradient">CONSTRUÍMOS</span>
               <br />
               VAI ALÉM.
-            </h2>
+            </motion.h2>
 
-            <p className="text-black text-base md:text-lg leading-relaxed">
+            <motion.p
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
+              className="text-black text-base md:text-lg leading-relaxed"
+            >
               <span className="font-semibold">Um bom empreendimento</span> não
               nasce por acaso.
               <br />
@@ -35,8 +77,8 @@ export default function AboutUs2() {
               <span className="font-semibold">
                 equipe que trata o detalhe como responsabilidade.
               </span>
-            </p>
-          </div>
+            </motion.p>
+          </motion.div>
         </div>
       </div>
     </section>

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { motion } from "motion/react";
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -16,8 +17,11 @@ export default function Navbar() {
   }, []);
 
   return (
-    <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? "backdrop-blur-sm bg-brown/40" : ""}`}
+    <motion.nav
+      initial={{ opacity: 0, y: "-100%" }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.3, ease: "easeOut" }}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 will-change-transform ${isScrolled ? "backdrop-blur-sm bg-brown/40" : ""}`}
     >
       <div className="mx-auto px-6 lg:px-25 max-w-480">
         <div className="flex justify-between items-center h-20">
@@ -66,12 +70,14 @@ export default function Navbar() {
 
           {/* CTA Button */}
           <div className="hidden md:block">
-            <a
+            <motion.a
               href="#contato"
-              className="bg-button-gradient hover:bg-white/30 backdrop-blur-xs px-6 py-2.5 rounded-lg text-white text-sm tracking-wider transition-colors"
+              whileHover={{ backgroundColor: "rgba(255, 255, 255, 0.3)" }}
+              transition={{ duration: 0.3 }}
+              className="bg-button-gradient backdrop-blur-xs px-6 py-2.5 rounded-lg text-white text-sm tracking-wider inline-block"
             >
               FALE CONOSCO!
-            </a>
+            </motion.a>
           </div>
 
           {/* Mobile menu button */}
@@ -128,6 +134,6 @@ export default function Navbar() {
           </div>
         )}
       </div>
-    </nav>
+    </motion.nav>
   );
 }
