@@ -12,7 +12,7 @@ export default function Hero() {
 
       <div className="flex flex-1 items-center">
         <div className="mx-auto px-6 lg:px-25 pt-20 w-full max-w-480">
-          <div className="w-full max-w-1/2">
+          <div className="w-full lg:max-w-1/2">
             <h1 className="mb-8 text-white text-4xl md:text-5xl leading-tight">
               INCORPORADORA
               <br />
