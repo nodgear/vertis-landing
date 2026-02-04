@@ -78,7 +78,7 @@ export default function AboutUs() {
             transition={{ duration: 1, ease: "easeOut", delay: 1 }}
             className="lg:ml-auto w-full md:w-1/2"
           >
-            <div className="bg-[url(/about_us_display.png)] bg-cover bg-no-repeat bg-center rounded-4xl w-full aspect-612/590"></div>
+            <div className="bg-[url(/about_us_display.png)] bg-cover bg-no-repeat bg-center rounded-4xl w-full aspect-612/390" />
           </motion.div>
         </div>
       </div>
