@@ -27,16 +27,16 @@ export default function Navbar() {
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? "backdrop-blur-sm bg-brown/40" : ""}`}
     >
       <div className="mx-auto px-6 lg:px-25 max-w-480">
-        <div className="flex justify-between items-center h-20">
+        <div className="flex justify-between items-center">
           {/* Logo */}
           <div className="flex-shrink-0">
             <a href="#" className="flex items-center">
               <img
                 src="/logo.png"
                 alt="VERTIS"
-                width="82"
-                height="82"
-                className="p-4 w-20 object-contain aspect-square"
+                width="110"
+                height="110"
+                className="p-4 w-36 object-contain aspect-square"
               />
             </a>
           </div>

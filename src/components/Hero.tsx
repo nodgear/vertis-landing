@@ -15,7 +15,7 @@ export default function Hero() {
 
       <div className="flex flex-1 items-center">
         <div className="mx-auto px-6 lg:px-25 pt-20 w-full max-w-480">
-          <div className="w-full lg:max-w-1/2">
+          <div className="w-full">
             <motion.h1
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -25,11 +25,11 @@ export default function Hero() {
             >
               INCORPORADORA
               <br />
-              COM <span className="font-bold">GOVERNANÇA,</span>
+              COM <span className="font-bold">GOVERNANÇA, DISCIPLINA</span>
               <br />
-              <span className="font-bold">DISCIPLINA FINANCEIRA</span>
-              <br />
-              <span className="font-bold">E EXECUÇÃO COMPROVADA.</span>
+              FINANCEIRA
+              <span className="ml-1 font-bold">E EXECUÇÃO</span>
+              <span className="ml-1 font-bold">COMPROVADA.</span>
             </motion.h1>
 
             <motion.p
@@ -40,10 +40,11 @@ export default function Hero() {
               className="text-white/90 text-base md:text-lg leading-relaxed"
             >
               Planejamos cada etapa com rigor, estrutura jurídica sólida
+              {/* <br className="hidden md:block" /> */}
+              e controle preciso dos custos,
               <br className="hidden md:block" />
-              e controle preciso dos custos, para criar empreendimentos
-              <br className="hidden md:block" />
-              que inspiram, conectam e preservam valor no longo prazo.
+              para criar empreendimentos que inspiram, conectam e preservam
+              valor no longo prazo.
             </motion.p>
 
             <motion.p
@@ -53,12 +54,13 @@ export default function Hero() {
               transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
               className="mb-10 font-semibold text-white text-base md:text-lg leading-relaxed"
             >
-              <span className="text-white/80">
+              <span className="ml-1 text-white/80">
                 Uma marca nova, sustentada por uma equipe experiente
               </span>
-              <br className="hidden md:block" />
+              {/* <br className="hidden md:block" /> */}
               <span className="text-white/80">
-                e projetos com VGV estimado superior a R$ 1 bilhão.
+                e projetos com VGV <br />
+                estimado superior a R$ 1 bilhão.
               </span>
             </motion.p>
 
