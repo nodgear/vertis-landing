@@ -12,8 +12,8 @@ export default function AboutUs() {
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8, ease: "easeOut" }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
               className="mb-8 text-white/70 text-sm uppercase tracking-widest"
             >
               VERTIS INCORPORADORA
@@ -22,8 +22,8 @@ export default function AboutUs() {
             <motion.h2
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: 0.1, ease: "easeOut" }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.6, delay: 0.5, ease: "easeOut" }}
               className="mb-8 font-display font-bold text-white text-3xl md:text-4xl lg:text-5xl leading-tight"
             >
               CUIDADO DE PERTO.
@@ -32,8 +32,8 @@ export default function AboutUs() {
             <motion.p
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.6, delay: 0.65, ease: "easeOut" }}
               className="mb-8 text-white text-xl md:text-2xl"
             >
               CONTROLE DE <span className="font-semibold">PONTA A PONTA.</span>
@@ -42,8 +42,8 @@ export default function AboutUs() {
             <motion.p
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.6, delay: 0.8, ease: "easeOut" }}
               className="mb-8 text-white/90 text-base leading-6.5"
             >
               Cada projeto segue um processo firme:{" "}
@@ -61,8 +61,8 @@ export default function AboutUs() {
             <motion.a
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.6, delay: 0.95, ease: "easeOut" }}
               whileHover={{ backgroundColor: "#333" }}
               href="#sobre"
               className="inline-block bg-[#4a4a4a] bg-button-gradient px-9 py-4 rounded-lg text-white tracking-wider"
@@ -71,15 +71,14 @@ export default function AboutUs() {
             </motion.a>
           </div>
 
-          {/*  Image  Placeholder  */}
           <motion.div
-            initial={{ opacity: 0, x: 30 }}
+            initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
+            transition={{ duration: 1, ease: "easeOut", delay: 1 }}
             className="lg:ml-auto w-full md:w-1/2"
           >
-            <div className="bg-[url(/about_us_display.png)] bg-cover bg-no-repeat bg-center rounded-4xl w-full aspect-[612/590]"></div>
+            <div className="bg-[url(/about_us_display.png)] bg-cover bg-no-repeat bg-center rounded-4xl w-full aspect-612/590"></div>
           </motion.div>
         </div>
       </div>

@@ -83,29 +83,67 @@ export default function Facility() {
     <section className="bg-brown py-16 md:pt-20 md:pb-7">
       <div className="flex flex-col gap-20 mx-auto px-6 lg:px-25 max-w-480">
         <div className="flex md:flex-row flex-col gap-8">
-          {facilities.map((facility, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{
-                duration: 0.6,
-                delay: index * 0.15,
-                ease: "easeOut",
-              }}
-              whileHover={{ backgroundColor: "rgba(255, 255, 255, 0.05)" }}
-              className="flex-1 bg-card-gradient p-10 md:p-10 rounded-2xl transition-colors"
-            >
-              <div className="mb-7 text-white">{facility.icon}</div>
-              <h3 className="mb-3 font-bold text-white md:text-2xl text-3xl">
-                {facility.title}
-              </h3>
-              <p className="text-white/80 md:text-base text-lg leading-relaxed">
-                {facility.description}
-              </p>
-            </motion.div>
-          ))}
+          {facilities.map((facility, index) => {
+            const cardDelay = index * 0.3;
+            const cardDuration = 0.3;
+            const contentStartDelay = cardDelay + cardDuration;
+
+            return (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{
+                  duration: cardDuration,
+                  delay: cardDelay,
+                  ease: "easeOut",
+                }}
+                whileHover={{ backgroundColor: "rgba(255, 255, 255, 0.05)" }}
+                className="flex-1 bg-card-gradient p-10 md:p-10 rounded-2xl transition-colors"
+              >
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{
+                    duration: 0.4,
+                    delay: contentStartDelay,
+                    ease: "easeOut",
+                  }}
+                  className="mb-7 text-white"
+                >
+                  {facility.icon}
+                </motion.div>
+                <motion.h3
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{
+                    duration: 0.4,
+                    delay: contentStartDelay + 0.1,
+                    ease: "easeOut",
+                  }}
+                  className="mb-3 font-bold text-white md:text-2xl text-3xl"
+                >
+                  {facility.title}
+                </motion.h3>
+                <motion.p
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{
+                    duration: 0.4,
+                    delay: contentStartDelay + 0.2,
+                    ease: "easeOut",
+                  }}
+                  className="text-white/80 md:text-base text-lg leading-relaxed"
+                >
+                  {facility.description}
+                </motion.p>
+              </motion.div>
+            );
+          })}
         </div>
 
         {/* Pagination dots */}

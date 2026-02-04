@@ -18,10 +18,13 @@ export default function Navbar() {
 
   return (
     <motion.nav
-      initial={{ opacity: 0, y: "-100%" }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.3, ease: "easeOut" }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 will-change-transform ${isScrolled ? "backdrop-blur-sm bg-brown/40" : ""}`}
+      initial={{ opacity: 0, translateY: -80 }}
+      animate={{ opacity: 1, translateY: 0 }}
+      transition={{
+        translateY: { type: "spring", stiffness: 120, damping: 25, mass: 0.8 },
+        opacity: { duration: 0.3, ease: "easeOut" },
+      }}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? "backdrop-blur-sm bg-brown/40" : ""}`}
     >
       <div className="mx-auto px-6 lg:px-25 max-w-480">
         <div className="flex justify-between items-center h-20">
@@ -33,7 +36,7 @@ export default function Navbar() {
                 alt="VERTIS"
                 width="82"
                 height="82"
-                className="object-contain aspect-square w-20 p-4"
+                className="p-4 w-20 object-contain aspect-square"
               />
             </a>
           </div>
@@ -74,7 +77,7 @@ export default function Navbar() {
               href="#contato"
               whileHover={{ backgroundColor: "rgba(255, 255, 255, 0.3)" }}
               transition={{ duration: 0.3 }}
-              className="bg-button-gradient backdrop-blur-xs px-6 py-2.5 rounded-lg text-white text-sm tracking-wider inline-block"
+              className="inline-block bg-button-gradient backdrop-blur-xs px-6 py-2.5 rounded-lg text-white text-sm tracking-wider"
             >
               FALE CONOSCO!
             </motion.a>
