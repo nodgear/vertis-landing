@@ -6,14 +6,24 @@ import { motion } from "motion/react";
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobile, setIsMobile] = useState(true);
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 100);
     };
 
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
     window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    window.addEventListener("resize", handleResize);
+    handleResize();
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleResize);
+    };
   }, []);
 
   return (
@@ -31,12 +41,16 @@ export default function Navbar() {
           {/* Logo */}
           <div className="flex-shrink-0">
             <a href="#" className="flex items-center">
-              <img
+              <motion.img
                 src="/logo.png"
                 alt="VERTIS"
                 width="110"
                 height="110"
-                className="p-4 w-36 object-contain aspect-square"
+                animate={{
+                  width: isScrolled ? 82 : 144,
+                }}
+                transition={{ duration: 0.3 }}
+                className="p-4 w-36 h-auto object-contain aspect-square"
               />
             </a>
           </div>

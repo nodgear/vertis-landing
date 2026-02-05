@@ -7,6 +7,7 @@ import BestResort from "@/components/BestResort";
 import AboutUs from "@/components/AboutUs";
 import ContactUs from "@/components/ContactUs";
 import Footer from "@/components/Footer";
+import SmoothScroll from "@/components/SmoothScroll";
 import { motion, useScroll, useTransform } from "motion/react";
 import { useRef } from "react";
 
@@ -14,22 +15,33 @@ export default function Home() {
   const heroRef = useRef(null);
   const { scrollY } = useScroll();
 
-  const contentY = useTransform(scrollY, [0, 800], [0, -400]);
-  const marginBottom = useTransform(scrollY, [0, 800], [0, -400]);
+  const contentRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: heroRef,
+    offset: ["start start", "end start"],
+  });
+  
+  const contentY = useTransform(scrollYProgress, [0, 1], [0, -500]);
 
   return (
-    <main className="min-h-screen">
-      <div ref={heroRef}>
-        <Hero />
-      </div>
-      <motion.div style={{ y: contentY, marginBottom }} className="relative">
-        <AboutUs2 />
-        <Facility />
-        {/* <BestResort  /> */}
-        <AboutUs />
-        <ContactUs />
-        <Footer />
-      </motion.div>
-    </main>
+    <SmoothScroll>
+      <main className="min-h-screen">
+        <div ref={heroRef} className="relative">
+          <Hero />
+          <motion.div 
+            ref={contentRef}
+            style={{ y: contentY }} 
+            className="absolute top-full w-full"
+          >
+            <AboutUs2 />
+            <Facility />
+            {/* <BestResort  /> */}
+            <AboutUs />
+            <ContactUs />
+            <Footer />
+          </motion.div>
+        </div>
+      </main>
+    </SmoothScroll>
   );
 }

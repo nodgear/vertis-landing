@@ -21,7 +21,7 @@ export default function Hero() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, ease: "easeOut" }}
-              className="mb-8 text-white text-4xl md:text-5xl leading-tight"
+              className="mb-8 overflow-x-hidden text-white text-4xl md:text-5xl leading-tight"
             >
               INCORPORADORA
               <br />
@@ -37,11 +37,11 @@ export default function Hero() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-              className="text-white/90 text-base md:text-lg leading-relaxed"
+              className="overflow-x-hidden text-white/90 text-base md:text-lg leading-relaxed"
             >
-              Planejamos cada etapa com rigor, estrutura jurídica sólida
+              Planejamos cada etapa com rigor, estrutura jurídica sólida e
+              controle preciso dos custos,
               {/* <br className="hidden md:block" /> */}
-              e controle preciso dos custos,
               <br className="hidden md:block" />
               para criar empreendimentos que inspiram, conectam e preservam
               valor no longo prazo.
@@ -58,7 +58,7 @@ export default function Hero() {
                 Uma marca nova, sustentada por uma equipe experiente
               </span>
               {/* <br className="hidden md:block" /> */}
-              <span className="text-white/80">
+              <span className="ml-1 text-white/80">
                 e projetos com VGV <br />
                 estimado superior a R$ 1 bilhão.
               </span>
@@ -78,7 +78,9 @@ export default function Hero() {
                 VER EMPREENDIMENTOS
               </a> */}
               <motion.a
-                href="#contato"
+                href="https://wa.me/5511966298399?text=Ol%C3%A1%21%20Quero%20conhecer%20mais%20sobre%20a%20Vertis%21"
+                target="_blank"
+                rel="noopener noreferrer"
                 whileHover={{ backgroundColor: "rgba(255, 255, 255, 0.3)" }}
                 transition={{ duration: 0.3 }}
                 className="flex justify-center items-center gap-2 bg-white/20 backdrop-blur-xs px-8 py-4 rounded-lg text-white text-sm tracking-wider"

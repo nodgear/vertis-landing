@@ -5,7 +5,6 @@ import { motion } from "motion/react";
 export default function AboutUs2() {
   return (
     <section
-      id="sobre"
       className="relative bg-white py-20 md:py-28 overflow-hidden"
     >
       <div className="mx-auto px-6 lg:px-25 max-w-480">
@@ -14,7 +13,7 @@ export default function AboutUs2() {
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, amount: 0.5 }}
+            viewport={{ once: true, amount: 0.4 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="w-full md:w-1/2 will-change-transform"
           >
@@ -26,8 +25,8 @@ export default function AboutUs2() {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.5 }}
-              transition={{ duration: 0.8, delay: 0.5, ease: "easeOut" }}
+              viewport={{ once: true, amount: 0.4 }}
+              transition={{ duration: 0.8, delay: 0.1, ease: "easeOut" }}
               className="mb-14"
             >
               <p className="mb-4 text-white/70 text-sm uppercase tracking-widest">
@@ -39,8 +38,8 @@ export default function AboutUs2() {
             <motion.h2
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.5 }}
-              transition={{ duration: 0.8, delay: 0.8, ease: "easeOut" }}
+              viewport={{ once: true, amount: 0.4 }}
+              transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
               className="mb-14 font-display font-medium text-brown text-3xl md:text-4xl lg:text-5xl"
             >
               O QUE NÓS
@@ -53,8 +52,8 @@ export default function AboutUs2() {
             <motion.p
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.5 }}
-              transition={{ duration: 0.8, delay: 1.0, ease: "easeOut" }}
+              viewport={{ once: true, amount: 0.4 }}
+              transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
               className="text-black text-base md:text-lg leading-relaxed"
             >
               <span className="font-semibold">Um bom empreendimento</span> não

@@ -93,10 +93,10 @@ export default function Facility() {
                 key={index}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
+                viewport={{ once: true, amount: 0.4 }}
                 transition={{
                   duration: cardDuration,
-                  delay: cardDelay,
+                  delay: cardDelay * 0.3,
                   ease: "easeOut",
                 }}
                 whileHover={{ backgroundColor: "rgba(255, 255, 255, 0.05)" }}
@@ -105,10 +105,10 @@ export default function Facility() {
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
+                  viewport={{ once: true, amount: 0.4 }}
                   transition={{
                     duration: 0.4,
-                    delay: contentStartDelay,
+                    delay: cardDelay * 0.3,
                     ease: "easeOut",
                   }}
                   className="mb-7 text-white"
@@ -118,10 +118,10 @@ export default function Facility() {
                 <motion.h3
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
+                  viewport={{ once: true, amount: 0.4 }}
                   transition={{
                     duration: 0.4,
-                    delay: contentStartDelay + 0.1,
+                    delay: cardDelay * 0.3 + 0.05,
                     ease: "easeOut",
                   }}
                   className="mb-3 font-bold text-white md:text-2xl text-3xl"
@@ -131,10 +131,10 @@ export default function Facility() {
                 <motion.p
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
+                  viewport={{ once: true, amount: 0.4 }}
                   transition={{
                     duration: 0.4,
-                    delay: contentStartDelay + 0.2,
+                    delay: cardDelay * 0.3 + 0.1,
                     ease: "easeOut",
                   }}
                   className="text-white/80 md:text-base text-lg leading-relaxed"
@@ -150,8 +150,8 @@ export default function Facility() {
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.5 }}
+          viewport={{ once: true, amount: 0.4 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
           className="flex justify-center gap-2 mt-10"
         >
           <div className="bg-[#D4BB95] rounded-full w-8 h-2"></div>
