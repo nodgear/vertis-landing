@@ -5,8 +5,8 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Vertis Incorporadora | Governança, Disciplina Financeira e Execução Comprovada",
-  description: "Incorporadora com governança, disciplina financeira e execução comprovada. Projetos com VGV estimado superior a R$ 1 bilhão.",
+  title: "Vertis Incorporadora",
+  description: "Incorporadora com governança, disciplina financeira e execução comprovada.",
   icons: {
     icon: [
       { url: "/favicon.ico", sizes: "any" },
@@ -14,6 +14,26 @@ export const metadata: Metadata = {
       { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
     ],
     apple: "/apple-touch-icon.png",
+  },
+  openGraph: {
+    type: "website",
+    url: "https://vertisincorporadora.com.br/",
+    title: "Incorporadora com governança, disciplina financeira e execução comprovada.",
+    description: "Planejamento financeiro por etapa, controle rigoroso e acompanhamento próximo da execução — foco em preservação de valor e retorno.",
+    images: [
+      {
+        url: "https://vertisincorporadora.com.br/og/vertis-og.png",
+        width: 1200,
+        height: 630,
+      },
+    ],
+    locale: "pt_BR",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Incorporadora com governança, disciplina financeira e execução comprovada.",
+    description: "Planejamento financeiro por etapa, controle rigoroso e acompanhamento próximo da execução — foco em preservação de valor e retorno.",
+    images: ["https://vertisincorporadora.com.br/og/vertis-og.png"],
   },
 };
 
