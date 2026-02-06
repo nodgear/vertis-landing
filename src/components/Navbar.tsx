@@ -36,7 +36,7 @@ export default function Navbar() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="fixed inset-0 bg-black/60 backdrop-blur-sm z-40 md:hidden"
+            className="md:hidden z-40 fixed inset-0 bg-black/60 backdrop-blur-sm"
             onClick={() => setIsMenuOpen(false)}
           ></motion.div>
         )}
@@ -150,7 +150,7 @@ export default function Navbar() {
                 animate={{ opacity: 1, height: "auto" }}
                 exit={{ opacity: 0, height: 0 }}
                 transition={{ duration: 0.3, ease: "easeInOut" }}
-                className="md:hidden pb-6 relative z-50 overflow-hidden"
+                className="md:hidden z-50 relative pb-6 overflow-hidden"
               >
                 <div className="flex flex-col space-y-4">
                   <a href="#" className="text-white text-sm tracking-wider">
@@ -164,12 +164,15 @@ export default function Navbar() {
                     SOBRE
                   </a>
                   {/* <a href="#empreendimentos" className="text-white text-sm tracking-wider">EMPREENDIMENTOS</a> */}
-                  <a href="#contato" className="text-white text-sm tracking-wider">
+                  <a
+                    href="#contato"
+                    className="text-white text-sm tracking-wider"
+                  >
                     CONTATO
                   </a>
                   <a
                     href="https://wa.me/5511966298399?text=Ol%C3%A1%21%20Quero%20conhecer%20mais%20sobre%20a%20Vertis%21"
-                    className="bg-white/20 backdrop-blur-xs px-6 py-2.5 rounded-lg text-white text-sm text-center tracking-wider"
+                    className="bg-button-gradient backdrop-blur-xs px-6 py-2.5 rounded-lg text-white text-sm text-center tracking-wider"
                   >
                     FALE CONOSCO!
                   </a>
