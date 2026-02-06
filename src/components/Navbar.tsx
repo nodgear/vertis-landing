@@ -86,7 +86,7 @@ export default function Navbar() {
                   });
                 }
               }}
-              className="hover:opacity-80 text-white text-sm tracking-wider transition-opacity"
+              className="hover:opacity-80 text-white text-sm tracking-wider transition-opacity cursor-pointer"
             >
               SOBRE
             </button>
