@@ -21,7 +21,7 @@ export default function Hero() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, ease: "easeOut" }}
-              className="mb-8 overflow-x-hidden text-white text-4xl md:text-5xl leading-tight"
+              className="mb-8 overflow-x-hidden text-white text-3xl md:text-5xl leading-tight"
             >
               INCORPORADORA
               <br />

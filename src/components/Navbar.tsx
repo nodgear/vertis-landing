@@ -63,33 +63,12 @@ export default function Navbar() {
             >
               HOME
             </a>
-            <button
-              onClick={() => {
-                const element = document.getElementById("sobre") as HTMLElement;
-                if (element) {
-                  let top = 0;
-                  let obj: HTMLElement | null = element;
-                  while (obj) {
-                    top += obj.offsetTop;
-                    obj = obj.offsetParent as HTMLElement | null;
-                  }
-                  const navbar = document.querySelector("nav") as HTMLElement;
-                  const navbarHeight = navbar ? navbar.offsetHeight + 60 : 120;
-                  const scrollPosition =
-                    top -
-                    navbarHeight -
-                    window.innerHeight / 2 +
-                    element.offsetHeight / 2;
-                  window.scrollTo({
-                    top: scrollPosition,
-                    behavior: "smooth",
-                  });
-                }
-              }}
+            <a
+              href="#sobre"
               className="hover:opacity-80 text-white text-sm tracking-wider transition-opacity cursor-pointer"
             >
               SOBRE
-            </button>
+            </a>
             {/* <div className="group relative">
               <button className="flex items-center gap-1 hover:opacity-80 text-white text-sm tracking-wider transition-opacity">
                 EMPREENDIMENTOS
@@ -155,37 +134,13 @@ export default function Navbar() {
               <a href="#" className="text-white text-sm tracking-wider">
                 HOME
               </a>
-              <button
-                onClick={() => {
-                  const element = document.getElementById(
-                    "sobre",
-                  ) as HTMLElement;
-                  if (element) {
-                    let top = 0;
-                    let obj: HTMLElement | null = element;
-                    while (obj) {
-                      top += obj.offsetTop;
-                      obj = obj.offsetParent as HTMLElement | null;
-                    }
-                    const navbar = document.querySelector("nav") as HTMLElement;
-                    const navbarHeight = navbar
-                      ? navbar.offsetHeight + 20
-                      : 120;
-                    const scrollPosition =
-                      top -
-                      navbarHeight -
-                      window.innerHeight / 2 +
-                      element.offsetHeight / 2;
-                    window.scrollTo({
-                      top: scrollPosition,
-                      behavior: "smooth",
-                    });
-                  }
-                }}
+              <a
+                href="#sobre"
+                onClick={() => setIsMenuOpen(false)}
                 className="text-white text-sm tracking-wider"
               >
                 SOBRE
-              </button>
+              </a>
               {/* <a href="#empreendimentos" className="text-white text-sm tracking-wider">EMPREENDIMENTOS</a> */}
               <a href="#contato" className="text-white text-sm tracking-wider">
                 CONTATO
