@@ -13,34 +13,31 @@ import { useRef } from "react";
 
 export default function Home() {
   const heroRef = useRef(null);
-  const { scrollY } = useScroll();
 
-  const contentRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: heroRef,
     offset: ["start start", "end start"],
   });
   
-  const contentY = useTransform(scrollYProgress, [0, 1], [0, -500]);
+  const marginTop = useTransform(scrollYProgress, [0, 1], ["0px", "-300px"]);
 
   return (
     <SmoothScroll>
       <main className="min-h-screen">
-        <div ref={heroRef} className="relative">
+        <div ref={heroRef}>
           <Hero />
-          <motion.div 
-            ref={contentRef}
-            style={{ y: contentY }} 
-            className="absolute top-full w-full"
-          >
-            <AboutUs2 />
-            <Facility />
-            {/* <BestResort  /> */}
-            <AboutUs />
-            <ContactUs />
-            <Footer />
-          </motion.div>
         </div>
+        <motion.div 
+          style={{ marginTop }} 
+          className="relative w-full"
+        >
+          <AboutUs2 />
+          <Facility />
+          {/* <BestResort  /> */}
+          <AboutUs />
+          <ContactUs />
+          <Footer />
+        </motion.div>
       </main>
     </SmoothScroll>
   );

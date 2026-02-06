@@ -28,11 +28,11 @@ export default function Navbar() {
 
   return (
     <motion.nav
-      initial={{ opacity: 0, translateY: -80 }}
+      initial={{ opacity: 0 }}
       animate={{ opacity: 1, translateY: 0 }}
       transition={{
-        translateY: { type: "spring", stiffness: 120, damping: 25, mass: 0.8 },
-        opacity: { duration: 0.3, ease: "easeOut" },
+        // translateY: { type: "spring", stiffness: 120, damping: 25, mass: 0.8 },
+        opacity: { duration: 1, ease: "easeOut" },
       }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? "backdrop-blur-sm bg-brown/40" : ""}`}
     >
@@ -63,12 +63,33 @@ export default function Navbar() {
             >
               HOME
             </a>
-            <a
-              href="#sobre"
+            <button
+              onClick={() => {
+                const element = document.getElementById("sobre") as HTMLElement;
+                if (element) {
+                  let top = 0;
+                  let obj: HTMLElement | null = element;
+                  while (obj) {
+                    top += obj.offsetTop;
+                    obj = obj.offsetParent as HTMLElement | null;
+                  }
+                  const navbar = document.querySelector("nav") as HTMLElement;
+                  const navbarHeight = navbar ? navbar.offsetHeight + 60 : 120;
+                  const scrollPosition =
+                    top -
+                    navbarHeight -
+                    window.innerHeight / 2 +
+                    element.offsetHeight / 2;
+                  window.scrollTo({
+                    top: scrollPosition,
+                    behavior: "smooth",
+                  });
+                }
+              }}
               className="hover:opacity-80 text-white text-sm tracking-wider transition-opacity"
             >
               SOBRE
-            </a>
+            </button>
             {/* <div className="group relative">
               <button className="flex items-center gap-1 hover:opacity-80 text-white text-sm tracking-wider transition-opacity">
                 EMPREENDIMENTOS
@@ -134,9 +155,37 @@ export default function Navbar() {
               <a href="#" className="text-white text-sm tracking-wider">
                 HOME
               </a>
-              <a href="#sobre" className="text-white text-sm tracking-wider">
+              <button
+                onClick={() => {
+                  const element = document.getElementById(
+                    "sobre",
+                  ) as HTMLElement;
+                  if (element) {
+                    let top = 0;
+                    let obj: HTMLElement | null = element;
+                    while (obj) {
+                      top += obj.offsetTop;
+                      obj = obj.offsetParent as HTMLElement | null;
+                    }
+                    const navbar = document.querySelector("nav") as HTMLElement;
+                    const navbarHeight = navbar
+                      ? navbar.offsetHeight + 20
+                      : 120;
+                    const scrollPosition =
+                      top -
+                      navbarHeight -
+                      window.innerHeight / 2 +
+                      element.offsetHeight / 2;
+                    window.scrollTo({
+                      top: scrollPosition,
+                      behavior: "smooth",
+                    });
+                  }
+                }}
+                className="text-white text-sm tracking-wider"
+              >
                 SOBRE
-              </a>
+              </button>
               {/* <a href="#empreendimentos" className="text-white text-sm tracking-wider">EMPREENDIMENTOS</a> */}
               <a href="#contato" className="text-white text-sm tracking-wider">
                 CONTATO

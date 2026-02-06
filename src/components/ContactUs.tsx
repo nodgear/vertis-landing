@@ -37,7 +37,9 @@ export default function ContactUs() {
               viewport={{ once: true, amount: 0.4 }}
               transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
               whileHover={{ backgroundColor: "#333" }}
-              href="mailto:vertis@vertisincorporadora.com.br"
+              href="https://wa.me/5511966298399?text=Ol%C3%A1%21%20Quero%20conhecer%20mais%20sobre%20a%20Vertis%21"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-block bg-button-gradient px-12 py-5 rounded-xl text-white text-lg tracking-widest"
             >
               ENTRE EM CONTATO

@@ -5,7 +5,8 @@ import { motion } from "motion/react";
 export default function AboutUs2() {
   return (
     <section
-      className="relative bg-white py-20 md:py-28 overflow-hidden"
+      id="sobre"
+      className="scroll-mt-40 relative bg-white py-20 md:py-28 overflow-hidden"
     >
       <div className="mx-auto px-6 lg:px-25 max-w-480">
         <div className="flex md:flex-row flex-col items-center gap-12 md:gap-20">
