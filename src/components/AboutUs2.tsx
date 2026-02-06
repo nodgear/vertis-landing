@@ -55,7 +55,21 @@ export default function AboutUs2() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.4 }}
               transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
-              className="text-black text-base md:text-lg leading-relaxed"
+              className="text-black text-base md:text-lg leading-relaxed md:hidden"
+            >
+              <span className="font-semibold">Um bom empreendimento</span> não
+              nasce por acaso.
+              <br />
+              Ele nasce quando existe{" "}
+              <span className="font-semibold">intenção, critério e uma equipe que trata o detalhe como responsabilidade.</span>
+            </motion.p>
+
+            <motion.p
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.4 }}
+              transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
+              className="text-black text-base md:text-lg leading-relaxed hidden md:block"
             >
               <span className="font-semibold">Um bom empreendimento</span> não
               nasce por acaso.
