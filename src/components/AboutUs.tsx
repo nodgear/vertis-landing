@@ -4,7 +4,10 @@ import { motion } from "motion/react";
 
 export default function AboutUs() {
   return (
-    <section id="sobre" className="bg-[url(/about_bg.png)] bg-cover bg-center py-24">
+    <section
+      id="sobre"
+      className="bg-[url(/about_bg.png)] bg-cover bg-center py-24"
+    >
       <div className="mx-auto px-6 lg:px-25 max-w-480">
         <div className="flex md:flex-row flex-col items-stretch gap-12 md:gap-20">
           {/*  Content  */}
@@ -64,7 +67,7 @@ export default function AboutUs() {
               viewport={{ once: true, amount: 0.4 }}
               transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
               whileHover={{ backgroundColor: "#333" }}
-              href="#sobre"
+              href="https://wa.me/5511966298399?text=Ol%C3%A1%21%20Quero%20conhecer%20mais%20sobre%20a%20Vertis%21"
               className="inline-block bg-[#4a4a4a] bg-button-gradient px-9 py-4 rounded-lg text-white tracking-wider"
             >
               CONHECER A VERTIS
