@@ -79,7 +79,7 @@ export default function Navbar() {
                 HOME
               </a>
               <a
-                href="#sobre"
+                href="/about"
                 className="hover:opacity-80 text-white text-sm tracking-wider transition-opacity cursor-pointer"
               >
                 SOBRE
@@ -157,7 +157,7 @@ export default function Navbar() {
                     HOME
                   </a>
                   <a
-                    href="#sobre"
+                    href="/about"
                     onClick={() => setIsMenuOpen(false)}
                     className="text-white text-sm tracking-wider"
                   >
