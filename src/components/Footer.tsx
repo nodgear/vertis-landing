@@ -5,7 +5,7 @@ export default function Footer() {
         <div className="flex md:flex-row flex-col gap-25 mb-12">
           {/*  Logo  and  Company  Info  */}
           <div className="flex flex-col">
-            <a href="#" className="mb-6">
+            <a href="/" className="mb-6">
               <img
                 src="/logo.png"
                 alt="VERTIS"
@@ -44,7 +44,7 @@ export default function Footer() {
             <ul className="space-y-3">
               <li>
                 <a
-                  href="#"
+                  href="/"
                   className="flex items-center gap-2 text-white/70 hover:text-white text-sm transition-colors"
                 >
                   <svg
