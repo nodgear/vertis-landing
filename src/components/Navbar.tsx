@@ -55,7 +55,7 @@ export default function Navbar() {
           <div className="flex justify-between items-center">
             {/* Logo */}
             <div className="flex-shrink-0">
-              <a href="#" className="flex items-center">
+              <a href="/" className="flex items-center">
                 <motion.img
                   src="/logo.png"
                   alt="VERTIS"
@@ -93,7 +93,7 @@ export default function Navbar() {
                 </button>
               </div> */}
               <a
-                href="#contato"
+                href="/contact"
                 className="hover:opacity-80 text-white text-sm tracking-wider transition-opacity"
               >
                 CONTATO
@@ -103,7 +103,7 @@ export default function Navbar() {
             {/* CTA Button */}
             <div className="hidden md:block">
               <motion.a
-                href="#contato"
+                href="/contact"
                 whileHover={{ backgroundColor: "rgba(255, 255, 255, 0.3)" }}
                 transition={{ duration: 0.3 }}
                 className="inline-block bg-button-gradient backdrop-blur-xs px-6 py-2.5 rounded-lg text-white text-sm tracking-wider"
@@ -153,7 +153,7 @@ export default function Navbar() {
                 className="md:hidden z-50 relative pb-6 overflow-hidden"
               >
                 <div className="flex flex-col space-y-4">
-                  <a href="#" className="text-white text-sm tracking-wider">
+                  <a href="/" className="text-white text-sm tracking-wider">
                     HOME
                   </a>
                   <a
@@ -165,13 +165,13 @@ export default function Navbar() {
                   </a>
                   {/* <a href="#empreendimentos" className="text-white text-sm tracking-wider">EMPREENDIMENTOS</a> */}
                   <a
-                    href="#contato"
+                    href="/contact"
                     className="text-white text-sm tracking-wider"
                   >
                     CONTATO
                   </a>
                   <a
-                    href="https://wa.me/5511966298399?text=Ol%C3%A1%21%20Quero%20conhecer%20mais%20sobre%20a%20Vertis%21"
+                    href="/contact"
                     className="bg-button-gradient backdrop-blur-xs px-6 py-2.5 rounded-lg text-white text-sm text-center tracking-wider"
                   >
                     FALE CONOSCO!

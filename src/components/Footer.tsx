@@ -89,7 +89,7 @@ export default function Footer() {
               </li> */}
               <li>
                 <a
-                  href="#contato"
+                  href="/contact"
                   className="flex items-center gap-2 text-white/70 hover:text-white text-sm transition-colors"
                 >
                   <svg
