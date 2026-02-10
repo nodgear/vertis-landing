@@ -36,6 +36,11 @@
   --gray-light: #d4d4d4;
   --gray-lighter: #e8e8e8;
   --card-gradient: linear-gradient(212.96deg, #b5a887 19.67%, #4f493b 114.49%);
+  --line-gradient: linear-gradient(
+    212.96deg,
+    #b5a887 0%,
+    rgba(79, 73, 59, 0) 100%
+  );
   --button-gradient: linear-gradient(
     68.49deg,
     rgba(212, 187, 149, 0) -72.28%,
@@ -79,6 +84,18 @@ body {
 
 .text-card-gradient {
   background: var(--card-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+.bg-divider-gradient {
+  background: var(--line-gradient);
+}
+
+.text-divider-gradient {
+  background: var(--line-gradient);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;

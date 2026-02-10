@@ -120,7 +120,7 @@ function IconPlaceholder() {
 
 export default function ValuesSection() {
   return (
-    <section className="bg-brown py-20 md:py-28">
+    <section className="bg-brown py-20 md:pt-28 md:pb-12">
       <div className="mx-auto px-6 lg:px-25 max-w-480">
         {/* Title */}
         <motion.div
