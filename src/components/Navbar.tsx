@@ -2,6 +2,9 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
+import Link from "next/link";
+
+const MotionLink = motion(Link);
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -46,7 +49,6 @@ export default function Navbar() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1, translateY: 0 }}
         transition={{
-          // translateY: { type: "spring", stiffness: 120, damping: 25, mass: 0.8 },
           opacity: { duration: 1, ease: "easeOut" },
         }}
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? "backdrop-blur-sm bg-brown/40" : ""}`}
@@ -55,7 +57,7 @@ export default function Navbar() {
           <div className="flex justify-between items-center">
             {/* Logo */}
             <div className="flex-shrink-0">
-              <a href="/" className="flex items-center">
+              <Link href="/" className="flex items-center">
                 <motion.img
                   src="/logo.png"
                   alt="VERTIS"
@@ -67,23 +69,23 @@ export default function Navbar() {
                   transition={{ duration: 0.3 }}
                   className="p-4 w-36 h-auto object-contain aspect-square"
                 />
-              </a>
+              </Link>
             </div>
 
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center space-x-10">
-              <a
-                href="#"
+              <Link
+                href="/"
                 className="hover:opacity-80 text-white text-sm tracking-wider transition-opacity"
               >
                 HOME
-              </a>
-              <a
+              </Link>
+              <Link
                 href="/about"
-                className="hover:opacity-80 text-white text-sm tracking-wider transition-opacity cursor-pointer"
+                className="hover:opacity-80 text-white text-sm tracking-wider transition-opacity"
               >
                 SOBRE
-              </a>
+              </Link>
               {/* <div className="group relative">
                 <button className="flex items-center gap-1 hover:opacity-80 text-white text-sm tracking-wider transition-opacity">
                   EMPREENDIMENTOS
@@ -92,24 +94,24 @@ export default function Navbar() {
                   </svg>
                 </button>
               </div> */}
-              <a
+              <Link
                 href="/contact"
                 className="hover:opacity-80 text-white text-sm tracking-wider transition-opacity"
               >
                 CONTATO
-              </a>
+              </Link>
             </div>
 
             {/* CTA Button */}
             <div className="hidden md:block">
-              <motion.a
+              <MotionLink
                 href="/contact"
                 whileHover={{ backgroundColor: "rgba(255, 255, 255, 0.3)" }}
                 transition={{ duration: 0.3 }}
                 className="inline-block bg-button-gradient backdrop-blur-xs px-6 py-2.5 rounded-lg text-white text-sm tracking-wider"
               >
                 FALE CONOSCO!
-              </motion.a>
+              </MotionLink>
             </div>
 
             {/* Mobile menu button */}
@@ -153,29 +155,31 @@ export default function Navbar() {
                 className="md:hidden z-50 relative pb-6 overflow-hidden"
               >
                 <div className="flex flex-col space-y-4">
-                  <a href="/" className="text-white text-sm tracking-wider">
+                  <Link href="/" className="text-white text-sm tracking-wider">
                     HOME
-                  </a>
-                  <a
+                  </Link>
+                  <Link
                     href="/about"
                     onClick={() => setIsMenuOpen(false)}
                     className="text-white text-sm tracking-wider"
                   >
                     SOBRE
-                  </a>
-                  {/* <a href="#empreendimentos" className="text-white text-sm tracking-wider">EMPREENDIMENTOS</a> */}
-                  <a
+                  </Link>
+                  {/* <Link href="#empreendimentos" className="text-white text-sm tracking-wider">EMPREENDIMENTOS</Link> */}
+                  <Link
                     href="/contact"
+                    onClick={() => setIsMenuOpen(false)}
                     className="text-white text-sm tracking-wider"
                   >
                     CONTATO
-                  </a>
-                  <a
+                  </Link>
+                  <Link
                     href="/contact"
+                    onClick={() => setIsMenuOpen(false)}
                     className="bg-button-gradient backdrop-blur-xs px-6 py-2.5 rounded-lg text-white text-sm text-center tracking-wider"
                   >
                     FALE CONOSCO!
-                  </a>
+                  </Link>
                 </div>
               </motion.div>
             )}

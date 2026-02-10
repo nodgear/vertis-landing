@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Footer() {
   return (
     <footer className="bg-brown py-16">
@@ -5,7 +7,7 @@ export default function Footer() {
         <div className="flex md:flex-row flex-col gap-25 mb-12">
           {/*  Logo  and  Company  Info  */}
           <div className="flex flex-col">
-            <a href="/" className="mb-6">
+            <Link href="/" className="mb-6">
               <img
                 src="/logo.png"
                 alt="VERTIS"
@@ -13,7 +15,7 @@ export default function Footer() {
                 height="82"
                 className="p-4 w-20 object-contain aspect-square"
               />
-            </a>
+            </Link>
             <p className="mb-4 text-white/70 text-sm">
               Vertis Incorporadora e Participações Ltda.
             </p>
@@ -43,7 +45,7 @@ export default function Footer() {
             <h4 className="mb-6 text-white text-lg">Links rápidos</h4>
             <ul className="space-y-3">
               <li>
-                <a
+                <Link
                   href="/"
                   className="flex items-center gap-2 text-white/70 hover:text-white text-sm transition-colors"
                 >
@@ -55,10 +57,10 @@ export default function Footer() {
                     <path d="M8  5v14l11-7z" />
                   </svg>
                   Home
-                </a>
+                </Link>
               </li>
               <li>
-                <a
+                <Link
                   href="/about"
                   className="flex items-center gap-2 text-white/70 hover:text-white text-sm transition-colors"
                 >
@@ -70,10 +72,10 @@ export default function Footer() {
                     <path d="M8  5v14l11-7z" />
                   </svg>
                   Sobre
-                </a>
+                </Link>
               </li>
               {/* <li>
-                <a
+                <Link
                   href="#empreendimentos"
                   className="flex items-center gap-2 text-white/70 hover:text-white text-sm transition-colors"
                 >
@@ -85,10 +87,10 @@ export default function Footer() {
                     <path d="M8  5v14l11-7z" />
                   </svg>
                   Empreendimentos
-                </a>
+                </Link>
               </li> */}
               <li>
-                <a
+                <Link
                   href="/contact"
                   className="flex items-center gap-2 text-white/70 hover:text-white text-sm transition-colors"
                 >
@@ -100,7 +102,7 @@ export default function Footer() {
                     <path d="M8  5v14l11-7z" />
                   </svg>
                   Contato
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -116,6 +118,7 @@ export default function Footer() {
                 href="https://br.linkedin.com/in/vertis-incorporadora-b5433b3a6"
                 className="hover:opacity-80 text-white transition-opacity"
                 target="_blank"
+                rel="noopener noreferrer"
               >
                 <svg
                   className="w-6 h-6"
