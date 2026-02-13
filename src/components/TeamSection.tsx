@@ -12,17 +12,14 @@ export default function TeamSection() {
         <div className="flex md:flex-row flex-col justify-center items-center gap-8 md:gap-12">
           {/* Person photo */}
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
+            initial={{ opacity: 0, filter: "blur(3px)" }}
+            whileInView={{ opacity: 1, filter: "blur(0)" }}
+            viewport={{ once: true, amount: 0.4 }}
             transition={{ duration: 0.9, ease: "easeOut" }}
-            className="flex-shrink-0 w-64 md:w-80 lg:w-96"
+            className="flex-shrink-0 mt-auto -mr-[10%] w-1/3"
           >
-            <Image
+            <img
               src="/team_talespen.png"
-              alt="Tales Pens"
-              width={400}
-              height={500}
               className="w-full h-auto object-bottom object-contain"
             />
           </motion.div>
@@ -33,10 +30,10 @@ export default function TeamSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.7, delay: 0.2, ease: "easeOut" }}
-            className="flex-1 mb-8 p-8 md:p-10 border border-[#7D745D] rounded-2xl max-w-md"
+            className="flex-1 mb-8 p-12 md:p-10 border border-[#7D745D] rounded-2xl max-w-md"
           >
             {/* Name */}
-            <h2 className="mb-1 font-bold text-white text-4xl md:text-5xl uppercase leading-tight tracking-wide">
+            <h2 className="mb-1 font-bold text-white text-4xl md:text-4xl uppercase leading-tight tracking-wide">
               TALES <span style={{ color: "#b5a887" }}>PENS</span>
             </h2>
 

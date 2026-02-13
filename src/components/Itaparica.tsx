@@ -19,7 +19,7 @@ function CityIcon() {
   );
 }
 
-export default function Araparica() {
+export default function Itaparica() {
   return (
     <div className="flex flex-col justify-center items-center gap-11 bg-[url(/itaparica_bg.png)] bg-no-repeat bg-center h-[80svh] md:h-[75svh] text-white">
       <div className="bg-[#A3BF35] px-4 py-1 rounded-full font-bold text-xs uppercase">

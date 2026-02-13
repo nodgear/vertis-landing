@@ -10,7 +10,7 @@ import Footer from "@/components/Footer";
 import SmoothScroll from "@/components/SmoothScroll";
 import { motion, useScroll, useTransform } from "motion/react";
 import { useRef } from "react";
-import Araparica from "@/components/Araparica";
+import Itaparica from "@/components/Itaparica";
 
 export default function Home() {
   const heroRef = useRef(null);
@@ -31,7 +31,7 @@ export default function Home() {
         <motion.div style={{ marginTop }} className="relative w-full">
           <AboutUs2 />
           <Facility />
-          <Araparica />
+          <Itaparica />
           {/* <BestResort  /> */}
           <AboutUs />
           <ContactUs />
