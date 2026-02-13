@@ -43,7 +43,7 @@ export default function BestResort() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="mb-6 font-display font-bold text-[#333] text-3xl md:text-4xl lg:text-5xl"
+            className="mb-6 font-bold text-[#333] text-3xl md:text-4xl lg:text-5xl"
           >
             EMPREENDIMENTOS
           </motion.h2>

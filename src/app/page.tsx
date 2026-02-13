@@ -10,6 +10,7 @@ import Footer from "@/components/Footer";
 import SmoothScroll from "@/components/SmoothScroll";
 import { motion, useScroll, useTransform } from "motion/react";
 import { useRef } from "react";
+import Araparica from "@/components/Araparica";
 
 export default function Home() {
   const heroRef = useRef(null);
@@ -18,7 +19,7 @@ export default function Home() {
     target: heroRef,
     offset: ["start start", "end start"],
   });
-  
+
   const marginTop = useTransform(scrollYProgress, [0, 1], ["0px", "-300px"]);
 
   return (
@@ -27,12 +28,10 @@ export default function Home() {
         <div ref={heroRef}>
           <Hero />
         </div>
-        <motion.div 
-          style={{ marginTop }} 
-          className="relative w-full"
-        >
+        <motion.div style={{ marginTop }} className="relative w-full">
           <AboutUs2 />
           <Facility />
+          <Araparica />
           {/* <BestResort  /> */}
           <AboutUs />
           <ContactUs />

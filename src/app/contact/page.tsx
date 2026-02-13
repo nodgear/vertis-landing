@@ -196,7 +196,7 @@ export default function ContactPage() {
           className="w-full h-[420px]"
         >
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.6236276565906!2d-46.58039492378488!3d-23.578453861710394!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce5b7d2c5f7a8d%3A0x6a1b2c3d4e5f6a7b!2sAv.%20Prof.%20Lu%C3%ADs%20In%C3%A1cio%20Anhaia%20Melo%2C%20S%C3%A3o%20Paulo%20-%20SP!5e0!3m2!1spt-BR!2sbr!4v1700000000000"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.1544185!2d-46.6762!3d-23.5847!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce574b7a1b9e93%3A0x1e6c3d4e5f6a7b8c!2sR.%20Pedroso%20Alvarenga%2C%201221%20-%20sala%209A%2C%20Itaim%20Bibi%2C%20S%C3%A3o%20Paulo%20-%20SP!5e0!3m2!1spt-BR!2sbr!4v1700000000000"
             width="100%"
             height="100%"
             style={{ border: 0 }}

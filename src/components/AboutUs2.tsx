@@ -6,7 +6,7 @@ export default function AboutUs2() {
   return (
     <section
       id="sobre"
-      className="scroll-mt-40 relative bg-white py-20 md:py-28 overflow-hidden"
+      className="relative bg-white py-20 md:py-28 overflow-hidden scroll-mt-40"
     >
       <div className="mx-auto px-6 lg:px-25 max-w-480">
         <div className="flex md:flex-row flex-col items-center gap-12 md:gap-20">
@@ -41,7 +41,7 @@ export default function AboutUs2() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.4 }}
               transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-              className="mb-14 font-display font-medium text-brown text-3xl md:text-4xl lg:text-5xl"
+              className="mb-14 font-medium text-brown text-3xl md:text-4xl lg:text-5xl"
             >
               O QUE NÓS
               <br />
@@ -55,13 +55,16 @@ export default function AboutUs2() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.4 }}
               transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
-              className="text-black text-base md:text-lg leading-relaxed md:hidden"
+              className="md:hidden text-black text-base md:text-lg leading-relaxed"
             >
               <span className="font-semibold">Um bom empreendimento</span> não
               nasce por acaso.
               <br />
               Ele nasce quando existe{" "}
-              <span className="font-semibold">intenção, critério e uma equipe que trata o detalhe como responsabilidade.</span>
+              <span className="font-semibold">
+                intenção, critério e uma equipe que trata o detalhe como
+                responsabilidade.
+              </span>
             </motion.p>
 
             <motion.p
@@ -69,7 +72,7 @@ export default function AboutUs2() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.4 }}
               transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
-              className="text-black text-base md:text-lg leading-relaxed hidden md:block"
+              className="hidden md:block text-black text-base md:text-lg leading-relaxed"
             >
               <span className="font-semibold">Um bom empreendimento</span> não
               nasce por acaso.

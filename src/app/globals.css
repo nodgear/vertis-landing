@@ -59,6 +59,10 @@
   --color-brown: #3c3730;
 }
 
+.font-dancing-script {
+  font-family: var(--font-dancing-script), cursive;
+}
+
 * {
   box-sizing: border-box;
 }
