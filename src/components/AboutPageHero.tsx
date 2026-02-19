@@ -12,7 +12,7 @@ export default function AboutPageHero() {
       <Navbar />
 
       <div className="z-10 relative flex flex-1 justify-center items-center">
-        <div className="mx-auto px-6 lg:px-25 pt-20 w-full max-w-340 text-center">
+        <div className="mx-auto px-6 lg:px-25 pt-20 pb-16 md:pb-24 w-full max-w-340 text-center">
           {/* Label with line below */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}

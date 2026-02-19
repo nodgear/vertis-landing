@@ -1,4 +1,4 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+Vertis Landing Page - Static HTML Export
 
 ## Getting Started
 
@@ -7,30 +7,55 @@ First, run the development server:
 ```bash
 npm run dev
 # or
-yarn dev
-# or
 pnpm dev
-# or
-bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Build for Static Export
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+This project is configured to export as static HTML. To build the static files:
+
+```bash
+npm run build
+# or
+pnpm build
+```
+
+The static files will be generated in the `out/` directory. You can deploy these files to any static hosting service.
+
+## Deployment Options
+
+### Static Hosting Services
+You can deploy the `out/` directory to any static hosting service:
+
+- **Netlify**: Drag and drop the `out/` folder or use CLI
+- **Vercel**: Connect your repository and set the output directory to `out`
+- **GitHub Pages**: Push the `out/` directory to a gh-pages branch
+- **AWS S3**: Upload the `out/` directory to an S3 bucket
+- **Cloudflare Pages**: Connect your repository
+- **Surge.sh**: Run `surge out/your-domain.com`
+- **Firebase Hosting**: Run `firebase deploy` after initializing
+
+### Local Testing
+
+To test the static build locally, you can use a simple HTTP server:
+
+```bash
+# Using Python 3
+cd out
+python3 -m http.server 8000
+
+# Using Node.js (http-server)
+npx http-server out/ -p 8000
+
+# Using PHP
+php -S localhost:8000 -t out/
+```
+
+Then visit [http://localhost:8000](http://localhost:8000)
 
 ## Learn More
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- [Next.js Documentation](https://nextjs.org/docs)
+- [Next.js Static Exports](https://nextjs.org/docs/app/building-your-application/deploying/static-exports)

@@ -4,8 +4,8 @@ import { motion } from "motion/react";
 
 export default function VisionSection() {
   return (
-    <section className="bg-[#676B59] py-24 md:py-32">
-      <div className="mx-auto px-6 lg:px-25 max-w-340 text-center">
+    <section className="bg-[#676B59] min-h-[70vh] md:min-h-0 py-24 md:py-32 flex items-center">
+      <div className="mx-auto px-6 lg:px-25 max-w-340 text-center w-full">
         {/* Label with line below */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -26,7 +26,7 @@ export default function VisionSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.4 }}
           transition={{ duration: 0.8, delay: 0.1, ease: "easeOut" }}
-          className="mb-10 font-bold text-white text-3xl md:text-4xl lg:text-5xl uppercase leading-tight"
+          className="mb-10 font-bold text-white text-2xl md:text-3xl lg:text-4xl uppercase leading-tight"
         >
           RESSIGNIFICAMOS OPORTUNIDADES PROMISSORAS, ELEVANDO-AS A UM NOVO
           PATAMAR DE QUALIDADE, SOFISTICAÇÃO E FUNCIONALIDADE.
