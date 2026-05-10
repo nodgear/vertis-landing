@@ -1,8 +1,10 @@
 "use client";
 
 import { motion } from "motion/react";
+import { useI18n } from "@/i18n/I18nProvider";
 
 export default function AboutUs() {
+  const { d } = useI18n();
   return (
     <section
       id="sobre"
@@ -19,7 +21,7 @@ export default function AboutUs() {
               transition={{ duration: 0.6, ease: "easeOut" }}
               className="mb-8 text-white/70 text-sm uppercase tracking-widest"
             >
-              VERTIS INCORPORADORA
+              {d.aboutUs.kicker}
             </motion.p>
 
             <motion.h2
@@ -29,7 +31,7 @@ export default function AboutUs() {
               transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
               className="mb-8 font-bold text-white text-3xl md:text-4xl lg:text-5xl leading-tight"
             >
-              CUIDADO DE PERTO.
+              {d.aboutUs.title}
             </motion.h2>
 
             <motion.p
@@ -39,7 +41,8 @@ export default function AboutUs() {
               transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
               className="mb-8 text-white text-xl md:text-2xl"
             >
-              CONTROLE DE <span className="font-semibold">PONTA A PONTA.</span>
+              {d.aboutUs.subtitlePre}
+              <span className="font-semibold">{d.aboutUs.subtitleBold}</span>
             </motion.p>
 
             <motion.p
@@ -49,16 +52,12 @@ export default function AboutUs() {
               transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
               className="mb-8 text-white/90 text-base leading-6.5"
             >
-              Cada projeto segue um processo firme:{" "}
+              {d.aboutUs.bodyPre}
               <span className="font-semibold text-[#B3D335]">
-                leitura do entorno, concepção bem resolvida e execução com
-                controle técnico.
+                {d.aboutUs.bodyHighlight}
               </span>
-              <br />A Vertis reúne profissionais com mais de duas décadas em
-              projetos de grande porte e atua ao lado de parceiros altamente
-              exigentes, de arquitetos e engenheiros a consultores e
-              fornecedores. Resultado: qualidade indiscutível e confiança na
-              entrega.
+              <br />
+              {d.aboutUs.bodyAfter}
             </motion.p>
 
             <motion.a
@@ -70,7 +69,7 @@ export default function AboutUs() {
               href="https://wa.me/5511966298399?text=Ol%C3%A1%21%20Quero%20conhecer%20mais%20sobre%20a%20Vertis%21"
               className="inline-block bg-[#4a4a4a] bg-button-gradient px-9 py-4 rounded-lg text-white tracking-wider"
             >
-              CONHECER A VERTIS
+              {d.aboutUs.cta}
             </motion.a>
           </div>
 

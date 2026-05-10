@@ -3,10 +3,13 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import Link from "next/link";
+import { useI18n } from "@/i18n/I18nProvider";
+import LanguageSwitcher from "@/i18n/LanguageSwitcher";
 
 const MotionLink = motion(Link);
 
 export default function Navbar() {
+  const { d } = useI18n();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobile, setIsMobile] = useState(true);
@@ -78,39 +81,32 @@ export default function Navbar() {
                 href="/"
                 className="hover:opacity-80 text-white text-sm tracking-wider transition-opacity"
               >
-                HOME
+                {d.nav.home}
               </Link>
               <Link
                 href="/about"
                 className="hover:opacity-80 text-white text-sm tracking-wider transition-opacity"
               >
-                SOBRE
+                {d.nav.about}
               </Link>
-              {/* <div className="group relative">
-                <button className="flex items-center gap-1 hover:opacity-80 text-white text-sm tracking-wider transition-opacity">
-                  EMPREENDIMENTOS
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                  </svg>
-                </button>
-              </div> */}
               <Link
                 href="/contact"
                 className="hover:opacity-80 text-white text-sm tracking-wider transition-opacity"
               >
-                CONTATO
+                {d.nav.contact}
               </Link>
             </div>
 
-            {/* CTA Button */}
-            <div className="hidden md:block">
+            {/* Right section: language switcher + CTA */}
+            <div className="hidden md:flex items-center gap-4">
+              <LanguageSwitcher />
               <MotionLink
                 href="/contact"
                 whileHover={{ backgroundColor: "rgba(255, 255, 255, 0.3)" }}
                 transition={{ duration: 0.3 }}
                 className="inline-block bg-button-gradient backdrop-blur-xs px-6 py-2.5 rounded-lg text-white text-sm tracking-wider"
               >
-                FALE CONOSCO!
+                {d.nav.cta}
               </MotionLink>
             </div>
 
@@ -156,29 +152,31 @@ export default function Navbar() {
               >
                 <div className="flex flex-col space-y-4">
                   <Link href="/" className="text-white text-sm tracking-wider">
-                    HOME
+                    {d.nav.home}
                   </Link>
                   <Link
                     href="/about"
                     onClick={() => setIsMenuOpen(false)}
                     className="text-white text-sm tracking-wider"
                   >
-                    SOBRE
+                    {d.nav.about}
                   </Link>
-                  {/* <Link href="#empreendimentos" className="text-white text-sm tracking-wider">EMPREENDIMENTOS</Link> */}
                   <Link
                     href="/contact"
                     onClick={() => setIsMenuOpen(false)}
                     className="text-white text-sm tracking-wider"
                   >
-                    CONTATO
+                    {d.nav.contact}
                   </Link>
+                  <div className="pt-2">
+                    <LanguageSwitcher />
+                  </div>
                   <Link
                     href="/contact"
                     onClick={() => setIsMenuOpen(false)}
                     className="bg-button-gradient backdrop-blur-xs px-6 py-2.5 rounded-lg text-white text-sm text-center tracking-wider"
                   >
-                    FALE CONOSCO!
+                    {d.nav.cta}
                   </Link>
                 </div>
               </motion.div>

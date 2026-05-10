@@ -1,8 +1,10 @@
 "use client";
 
 import { motion } from "motion/react";
+import { useI18n } from "@/i18n/I18nProvider";
 
 export default function AboutUs2() {
+  const { d } = useI18n();
   return (
     <section
       id="sobre"
@@ -31,7 +33,7 @@ export default function AboutUs2() {
               className="mb-14"
             >
               <p className="mb-4 text-white/70 text-sm uppercase tracking-widest">
-                VERTIS INCORPORADORA
+                {d.aboutUs2.kicker}
               </p>
               <div className="bg-card-gradient w-1/4 h-0.5"></div>
             </motion.div>
@@ -43,11 +45,13 @@ export default function AboutUs2() {
               transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
               className="mb-14 font-medium text-brown text-3xl md:text-4xl lg:text-5xl"
             >
-              O QUE NÓS
+              {d.aboutUs2.titleLine1}
               <br />
-              <span className="inline-block text-gradient">CONSTRUÍMOS</span>
+              <span className="inline-block text-gradient">
+                {d.aboutUs2.titleLine2}
+              </span>
               <br />
-              VAI ALÉM.
+              {d.aboutUs2.titleLine3}
             </motion.h2>
 
             <motion.p
@@ -57,13 +61,12 @@ export default function AboutUs2() {
               transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
               className="md:hidden text-black text-base md:text-lg leading-relaxed"
             >
-              <span className="font-semibold">Um bom empreendimento</span> não
-              nasce por acaso.
+              <span className="font-semibold">{d.aboutUs2.bodyBoldStart}</span>
+              {d.aboutUs2.bodyAfterBoldStart}
               <br />
-              Ele nasce quando existe{" "}
+              {d.aboutUs2.bodyMiddle}
               <span className="font-semibold">
-                intenção, critério e uma equipe que trata o detalhe como
-                responsabilidade.
+                {d.aboutUs2.bodyBoldEndMobile}
               </span>
             </motion.p>
 
@@ -74,14 +77,16 @@ export default function AboutUs2() {
               transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
               className="hidden md:block text-black text-base md:text-lg leading-relaxed"
             >
-              <span className="font-semibold">Um bom empreendimento</span> não
-              nasce por acaso.
+              <span className="font-semibold">{d.aboutUs2.bodyBoldStart}</span>
+              {d.aboutUs2.bodyAfterBoldStart}
               <br />
-              Ele nasce quando existe{" "}
-              <span className="font-semibold">intenção, critério e uma</span>
+              {d.aboutUs2.bodyMiddle}
+              <span className="font-semibold">
+                {d.aboutUs2.bodyBoldEndDesktopLine1}
+              </span>
               <br />
               <span className="font-semibold">
-                equipe que trata o detalhe como responsabilidade.
+                {d.aboutUs2.bodyBoldEndDesktopLine2}
               </span>
             </motion.p>
           </motion.div>

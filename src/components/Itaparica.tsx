@@ -1,5 +1,6 @@
 "use client";
 import { motion } from "motion/react";
+import { useI18n } from "@/i18n/I18nProvider";
 
 function CityIcon() {
   return (
@@ -23,6 +24,7 @@ function CityIcon() {
 }
 
 export default function Itaparica() {
+  const { d } = useI18n();
   return (
     <div className="flex flex-col justify-center items-center gap-11 bg-[url(/itaparica_bg.png)] bg-no-repeat bg-center h-[80svh] md:h-[75svh] text-white">
       <motion.div
@@ -32,7 +34,7 @@ export default function Itaparica() {
         transition={{ duration: 0.6, ease: "easeOut" }}
         className="bg-[#A3BF35] px-4 py-1 rounded-full font-bold text-xs uppercase"
       >
-        Novidade!
+        {d.itaparica.badge}
       </motion.div>
       <div className="flex flex-col justify-center items-center gap-7">
         <motion.div
@@ -50,7 +52,7 @@ export default function Itaparica() {
           transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
           className="font-bold text-5xl"
         >
-          ITAPARICA
+          {d.itaparica.title}
         </motion.h1>
         <motion.p
           initial={{ opacity: 0, y: 30 }}
@@ -59,10 +61,14 @@ export default function Itaparica() {
           transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
           className="text-xl text-center"
         >
-          Um lugar para <span className="font-bold">contemplar</span>,<br />
-          <span className="mr-1 font-bold">investir</span>e
+          {d.itaparica.subtitlePre}
+          <span className="font-bold">{d.itaparica.subtitleBold1}</span>
+          {d.itaparica.subtitleComma}
+          <br />
+          <span className="mr-1 font-bold">{d.itaparica.subtitleBold2}</span>
+          {d.itaparica.subtitleConnector}
           <span className="ml-1 font-dancing-script font-bold text-3xl">
-            pertencer.
+            {d.itaparica.subtitleBold3}
           </span>
         </motion.p>
       </div>
@@ -74,7 +80,7 @@ export default function Itaparica() {
         href="https://amalfiitaparica.com.br/"
       >
         <button className="bg-button-gradient backdrop-blur-xs hover:backdrop-blur-xl -mt-2 px-6 py-2 rounded-lg font-bold text-lg duration-200 cursor-pointer">
-          Cadastre-se e descubra sua ilha.
+          {d.itaparica.cta}
         </button>
       </motion.a>
     </div>

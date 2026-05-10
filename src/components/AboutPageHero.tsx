@@ -2,8 +2,10 @@
 
 import Navbar from "./Navbar";
 import { motion } from "motion/react";
+import { useI18n } from "@/i18n/I18nProvider";
 
 export default function AboutPageHero() {
+  const { d } = useI18n();
   return (
     <section
       className="relative flex flex-col bg-cover bg-no-repeat bg-center min-h-screen"
@@ -22,7 +24,7 @@ export default function AboutPageHero() {
             className="flex flex-col items-center gap-3 mb-8"
           >
             <p className="text-white/90 text-xs uppercase tracking-[0.2em]">
-              NOSSO PROPÓSITO
+              {d.aboutHero.kicker}
             </p>
             <div className="bg-divider-gradient w-2/3 h-0.5" />
           </motion.div>
@@ -35,11 +37,8 @@ export default function AboutPageHero() {
             transition={{ duration: 0.8, delay: 0.1, ease: "easeOut" }}
             className="mb-10 text-white text-3xl md:text-4xl lg:text-5xl uppercase leading-tight"
           >
-            <span className="font-bold">
-              CRIAR EMPREENDIMENTOS QUE INSPIRAM, CONECTAM E ATRAEM AS PESSOAS.
-            </span>{" "}
-            CADA PROJETO NASCE A PARTIR DE UM OLHAR ARTESANAL E ATENÇÃO A CADA
-            DETALHE.
+            <span className="font-bold">{d.aboutHero.titleBold}</span>{" "}
+            {d.aboutHero.titleAfter}
           </motion.h1>
 
           {/* Body paragraph */}
@@ -50,11 +49,7 @@ export default function AboutPageHero() {
             transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
             className="mx-auto max-w-xl text-white/80 text-sm md:text-base leading-relaxed"
           >
-            Somos uma incorporadora especializada em empreendimentos de médio e
-            alto padrão. Transformamos endereços em histórias marcantes, com
-            projetos bem pensados e construídos com paixão, comprometimento e
-            energia, pensados nos detalhes e executados com precisão para
-            entregar valor perene.
+            {d.aboutHero.body}
           </motion.p>
         </div>
       </div>

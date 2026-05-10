@@ -1,8 +1,10 @@
 "use client";
 
 import { motion } from "motion/react";
+import { useI18n } from "@/i18n/I18nProvider";
 
 export default function VisionSection() {
+  const { d } = useI18n();
   return (
     <section className="bg-[#676B59] min-h-[70vh] md:min-h-0 py-24 md:py-32 flex items-center">
       <div className="mx-auto px-6 lg:px-25 max-w-340 text-center w-full">
@@ -15,7 +17,7 @@ export default function VisionSection() {
           className="flex flex-col items-center gap-3 mb-8"
         >
           <p className="text-white/80 text-xs uppercase tracking-[0.2em]">
-            NOSSA VISÃO
+            {d.vision.kicker}
           </p>
           <div className="bg-divider-gradient w-2/3 h-0.5" />
         </motion.div>
@@ -28,8 +30,7 @@ export default function VisionSection() {
           transition={{ duration: 0.8, delay: 0.1, ease: "easeOut" }}
           className="mb-10 font-bold text-white text-2xl md:text-3xl lg:text-4xl uppercase leading-tight"
         >
-          RESSIGNIFICAMOS OPORTUNIDADES PROMISSORAS, ELEVANDO-AS A UM NOVO
-          PATAMAR DE QUALIDADE, SOFISTICAÇÃO E FUNCIONALIDADE.
+          {d.vision.heading}
         </motion.h2>
 
         {/* Body */}
@@ -40,9 +41,7 @@ export default function VisionSection() {
           transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
           className="mx-auto max-w-xl text-white/75 text-sm md:text-base leading-relaxed"
         >
-          Nosso foco é entregar produtos cuidadosamente trabalhados, com
-          compromisso de criar empreendimentos que inspiram e valorizam o
-          entorno e geram resultados consistentes para clientes e investidores.
+          {d.vision.body}
         </motion.p>
       </div>
     </section>

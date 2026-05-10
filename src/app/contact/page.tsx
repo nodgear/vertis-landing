@@ -5,10 +5,12 @@ import Footer from "@/components/Footer";
 import SmoothScroll from "@/components/SmoothScroll";
 import { motion } from "motion/react";
 import { useState } from "react";
+import { useI18n } from "@/i18n/I18nProvider";
 
 type Result = "idle" | "loading" | "success" | "error";
 
 export default function ContactPage() {
+  const { d } = useI18n();
   const [result, setResult] = useState<Result>("idle");
 
   async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
@@ -18,32 +20,36 @@ export default function ContactPage() {
     const form = e.currentTarget;
     const data = new FormData(form);
 
-    const name    = data.get("name")    as string;
-    const email   = data.get("email")   as string;
-    const phone   = data.get("phone")   as string;
+    const name = data.get("name") as string;
+    const email = data.get("email") as string;
+    const phone = data.get("phone") as string;
     const assunto = data.get("assunto") as string;
     const message = data.get("message") as string;
 
-    // Compose body with all fields, same structure as WhatsApp message
     const body = [
-      `Nome: ${name}`,
-      `E-mail: ${email}`,
-      `Telefone / WhatsApp: ${phone}`,
-      `Assunto: ${assunto}`,
+      `${d.contact.bodyLabels.name}: ${name}`,
+      `${d.contact.bodyLabels.email}: ${email}`,
+      `${d.contact.bodyLabels.phone}: ${phone}`,
+      `${d.contact.bodyLabels.subject}: ${assunto}`,
       ``,
-      `Mensagem:`,
+      `${d.contact.bodyLabels.message}:`,
       message,
     ].join("\n");
 
     data.set("from_name", name);
-    data.set("subject", assunto || "Nova mensagem - Site Vertis");
+    data.set("subject", assunto || d.contact.emailSubject);
     data.set("message", body);
 
     try {
-      const res  = await fetch("https://api.web3forms.com/submit", { method: "POST", body: data });
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: data,
+      });
       const json = await res.json();
-      if (json.success) { setResult("success"); form.reset(); }
-      else setResult("error");
+      if (json.success) {
+        setResult("success");
+        form.reset();
+      } else setResult("error");
     } catch {
       setResult("error");
     }
@@ -78,7 +84,7 @@ export default function ContactPage() {
                 />
               </svg>
               <h1 className="font-bold text-white text-3xl md:text-4xl uppercase tracking-wide">
-                VAMOS CONVERSAR!
+                {d.contact.title}
               </h1>
             </motion.div>
 
@@ -103,7 +109,7 @@ export default function ContactPage() {
               <input
                 type="text"
                 name="name"
-                placeholder="NOME COMPLETO"
+                placeholder={d.contact.placeholders.name}
                 required
                 className="bg-[#f5f4f0] px-5 py-4 rounded-sm outline-none w-full text-brown placeholder:text-brown/60 text-xs uppercase tracking-widest"
               />
@@ -113,14 +119,14 @@ export default function ContactPage() {
                 <input
                   type="email"
                   name="email"
-                  placeholder="E-MAIL"
+                  placeholder={d.contact.placeholders.email}
                   required
                   className="flex-1 bg-[#f5f4f0] px-5 py-4 rounded-sm outline-none text-brown placeholder:text-brown/60 text-xs uppercase tracking-widest"
                 />
                 <input
                   type="tel"
                   name="phone"
-                  placeholder="TELEFONE / WHATSAPP"
+                  placeholder={d.contact.placeholders.phone}
                   className="flex-1 bg-[#f5f4f0] px-5 py-4 rounded-sm outline-none text-brown placeholder:text-brown/60 text-xs uppercase tracking-widest"
                 />
               </div>
@@ -129,14 +135,14 @@ export default function ContactPage() {
               <input
                 type="text"
                 name="assunto"
-                placeholder="ASSUNTO:"
+                placeholder={d.contact.placeholders.subject}
                 className="bg-[#f5f4f0] px-5 py-4 rounded-sm outline-none w-full text-brown placeholder:text-brown/60 text-xs uppercase tracking-widest"
               />
 
               {/* Message */}
               <textarea
                 name="message"
-                placeholder="MENSAGEM"
+                placeholder={d.contact.placeholders.message}
                 rows={6}
                 className="bg-[#f5f4f0] px-5 py-4 rounded-sm outline-none w-full text-brown placeholder:text-brown/60 text-xs uppercase tracking-widest resize-none"
               />
@@ -150,12 +156,17 @@ export default function ContactPage() {
                 className="flex justify-center items-center gap-3 bg-[#B5A887] bg-button-gradient py-5 rounded-sm w-full text-white text-xs uppercase tracking-widest cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed"
               >
                 {result === "loading" ? (
-                  <span>ENVIANDO...</span>
+                  <span>{d.contact.submit.loading}</span>
                 ) : (
                   <>
                     <span>
-                      <span className="font-bold">QUERO FALAR</span> COM A{" "}
-                      <span className="font-bold">VERTIS</span>
+                      <span className="font-bold">
+                        {d.contact.submit.idleBold1}
+                      </span>
+                      {d.contact.submit.idleMiddle}
+                      <span className="font-bold">
+                        {d.contact.submit.idleBold2}
+                      </span>
                     </span>
                     <svg width="16" height="12" viewBox="0 0 16 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path d="M1 6H15M15 6L10 1M15 6L10 11" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
@@ -171,7 +182,7 @@ export default function ContactPage() {
                   animate={{ opacity: 1, y: 0 }}
                   className="pt-2 text-center text-white text-sm tracking-wide"
                 >
-                  Mensagem enviada com sucesso! Entraremos em contato em breve.
+                  {d.contact.feedback.success}
                 </motion.p>
               )}
               {result === "error" && (
@@ -180,7 +191,7 @@ export default function ContactPage() {
                   animate={{ opacity: 1, y: 0 }}
                   className="pt-2 text-center text-white/80 text-sm tracking-wide"
                 >
-                  Algo deu errado. Por favor, tente novamente.
+                  {d.contact.feedback.error}
                 </motion.p>
               )}
             </motion.form>

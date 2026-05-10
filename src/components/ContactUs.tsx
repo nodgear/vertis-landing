@@ -1,8 +1,10 @@
 "use client";
 
 import { motion } from "motion/react";
+import { useI18n } from "@/i18n/I18nProvider";
 
 export default function ContactUs() {
+  const { d } = useI18n();
   return (
     <>
       <section id="contato" className="py-20 md:py-28 text-[#676B59]">
@@ -16,7 +18,8 @@ export default function ContactUs() {
               transition={{ duration: 0.8, ease: "easeOut" }}
               className="mb-6 text-3xl md:text-4xl lg:text-5xl"
             >
-              VAMOS <span className="font-bold">CONVERSAR!</span>
+              {d.contactUs.titlePre}
+              <span className="font-bold">{d.contactUs.titleBold}</span>
             </motion.h2>
 
             <motion.p
@@ -26,9 +29,7 @@ export default function ContactUs() {
               transition={{ duration: 0.8, delay: 0.1, ease: "easeOut" }}
               className="mx-auto mb-10 max-w-2xl text-base md:text-lg /70"
             >
-              Se você quer entender melhor os empreendimentos, falar sobre
-              oportunidades ou construir uma parceria com a Vertis, a porta está
-              aberta!
+              {d.contactUs.body}
             </motion.p>
 
             <motion.a
@@ -42,7 +43,7 @@ export default function ContactUs() {
               rel="noopener noreferrer"
               className="inline-block bg-button-gradient px-12 py-5 rounded-xl text-white text-lg tracking-widest"
             >
-              ENTRE EM CONTATO
+              {d.contactUs.cta}
             </motion.a>
 
 

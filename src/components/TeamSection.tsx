@@ -1,9 +1,10 @@
 "use client";
 
-import Image from "next/image";
 import { motion } from "motion/react";
+import { useI18n } from "@/i18n/I18nProvider";
 
 export default function TeamSection() {
+  const { d } = useI18n();
   return (
     <section className="relative bg-[url(/about_team_display.png)] bg-cover bg-no-repeat bg-center pt-8 overflow-hidden">
       {/* Blurred background */}
@@ -20,24 +21,22 @@ export default function TeamSection() {
           >
             {/* Name */}
             <h2 className="mb-1 font-bold text-white text-4xl md:text-4xl uppercase leading-tight tracking-wide">
-              TALES <span style={{ color: "#b5a887" }}>PENS</span>
+              {d.team.firstName}{" "}
+              <span style={{ color: "#b5a887" }}>{d.team.lastName}</span>
             </h2>
 
             {/* Title */}
             <p className="mb-6 font-bold text-white text-xs uppercase tracking-widest">
-              Diretor
+              {d.team.role}
             </p>
 
             {/* Bio */}
             <p className="mb-5 text-white text-sm md:text-base leading-relaxed">
-              Engenheiro civil formado pela Ulbra e pós-graduado pela Fundação
-              Getúlio Vargas, é especialista em obras de grande porte, incluindo
-              shoppings, indústrias, prédios corporativos e empreendimentos
-              residenciais.
+              {d.team.bio}
             </p>
 
             <p className="font-bold text-white text-sm md:text-base leading-relaxed">
-              Nos últimos 10 anos, foi engenheiro-líder de mais de 20, e em toda sua carreira já entregou mais de 5.340 unidades, totalizando 580.150 m² de obras.
+              {d.team.bioHighlight}
             </p>
           </motion.div>
 
