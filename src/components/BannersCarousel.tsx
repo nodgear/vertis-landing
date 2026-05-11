@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import CasaDoPoetaBanner from "./CasaDoPoetaBanner";
 import GuaiuBanner from "./GuaiuBanner";
@@ -31,6 +31,14 @@ export default function BannersCarousel() {
 
   const prev = () => goTo(index - 1);
   const next = () => goTo(index + 1);
+
+  useEffect(() => {
+    const id = setInterval(() => {
+      setDirection(1);
+      setIndex((i) => (i + 1) % slides.length);
+    }, 6000);
+    return () => clearInterval(id);
+  }, [index]);
 
   const { Component, key } = slides[index];
 
