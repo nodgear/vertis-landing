@@ -11,9 +11,7 @@ import SmoothScroll from "@/components/SmoothScroll";
 import { motion, useScroll, useTransform } from "motion/react";
 import { useRef } from "react";
 import Itaparica from "@/components/Itaparica";
-import GuaiuBanner from "@/components/GuaiuBanner";
-import CasaDoPoetaBanner from "@/components/CasaDoPoetaBanner";
-import SenseBanner from "@/components/SenseBanner";
+import BannersCarousel from "@/components/BannersCarousel";
 
 export default function Home() {
   const heroRef = useRef(null);
@@ -36,9 +34,7 @@ export default function Home() {
           <Facility />
           {/* <Itaparica /> */}
           {/* <BestResort  /> */}
-          <CasaDoPoetaBanner />
-          <GuaiuBanner />
-          <SenseBanner />
+          <BannersCarousel />
           <AboutUs />
           <ContactUs />
           <Footer />
