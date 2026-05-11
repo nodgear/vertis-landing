@@ -11,6 +11,9 @@ import SmoothScroll from "@/components/SmoothScroll";
 import { motion, useScroll, useTransform } from "motion/react";
 import { useRef } from "react";
 import Itaparica from "@/components/Itaparica";
+import GuaiuBanner from "@/components/GuaiuBanner";
+import CasaDoPoetaBanner from "@/components/CasaDoPoetaBanner";
+import SenseBanner from "@/components/SenseBanner";
 
 export default function Home() {
   const heroRef = useRef(null);
@@ -31,8 +34,11 @@ export default function Home() {
         <motion.div style={{ marginTop }} className="relative w-full">
           <AboutUs2 />
           <Facility />
-          <Itaparica />
+          {/* <Itaparica /> */}
           {/* <BestResort  /> */}
+          <CasaDoPoetaBanner />
+          <GuaiuBanner />
+          <SenseBanner />
           <AboutUs />
           <ContactUs />
           <Footer />

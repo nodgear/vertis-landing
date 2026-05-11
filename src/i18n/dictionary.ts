@@ -79,6 +79,31 @@ const ptBR = {
     subtitleBold3: "pertencer.",
     cta: "Cadastre-se e descubra sua ilha.",
   },
+  senseBanner: {
+    logoAlt: "Sense",
+    titleLine1: "Você no centro",
+    titleLine2: "de tudo",
+    body:
+      "Onde o verde acompanha o cotidiano, os serviços estão ao alcance e a cidade se torna mais fluida, prática e agradável de viver.",
+    ctaPrimary: "Conheça o projeto",
+    ctaSecondary: "Ver localização",
+  },
+  guaiuBanner: {
+    logoAlt: "Guaiú",
+    bodyPre:
+      "No sul da Bahia, um destino raro entre mar, mata e silêncio, onde a vida encontra um novo ritmo e a paisagem ",
+    bodyBold: "se transforma em experiência.",
+    ctaPrimary: "Conheça o projeto",
+    ctaSecondary: "Ver localização",
+  },
+  casaDoPoetaBanner: {
+    logoAlt: "Casa do Poeta — entre e viva a poesia da vida",
+    bodyPre:
+      "Onde a cidade dá lugar ao silêncio, a vista se torna privilégio e a natureza convida a viver com mais ",
+    bodyBold: "calma, presença e liberdade.",
+    ctaPrimary: "Conheça o projeto",
+    ctaSecondary: "Ver localização",
+  },
   aboutUs: {
     kicker: "VERTIS INCORPORADORA",
     title: "CUIDADO DE PERTO.",
@@ -282,6 +307,31 @@ const en: typeof ptBR = {
     subtitleConnector: "and",
     subtitleBold3: "belong.",
     cta: "Sign up and discover your island.",
+  },
+  senseBanner: {
+    logoAlt: "Sense",
+    titleLine1: "You at the center",
+    titleLine2: "of everything",
+    body:
+      "Where greenery accompanies daily life, services are within reach and the city becomes more fluid, practical and pleasant to live in.",
+    ctaPrimary: "Discover the project",
+    ctaSecondary: "View location",
+  },
+  guaiuBanner: {
+    logoAlt: "Guaiú",
+    bodyPre:
+      "In southern Bahia, a rare destination between sea, forest and silence, where life finds a new rhythm and the landscape ",
+    bodyBold: "becomes an experience.",
+    ctaPrimary: "Discover the project",
+    ctaSecondary: "View location",
+  },
+  casaDoPoetaBanner: {
+    logoAlt: "Casa do Poeta — come in and live the poetry of life",
+    bodyPre:
+      "Where the city gives way to silence, the view becomes a privilege and nature invites you to live with more ",
+    bodyBold: "calm, presence and freedom.",
+    ctaPrimary: "Discover the project",
+    ctaSecondary: "View location",
   },
   aboutUs: {
     kicker: "VERTIS INCORPORADORA",
